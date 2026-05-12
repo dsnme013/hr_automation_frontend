@@ -265,8 +265,9 @@
 // export default candidateSlice.reducer;
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getCandidates, getJobs, sendAssessmentReminder } from "../thunk/candidateThunk";
+import { getCandidates, getJobs, sendAssessmentReminder, getMatchReport} from "../thunk/candidateThunk";
 import type { Candidate, Job } from "@/services/interfaces/CandidateScreening";
+
 
 type Loading = "idle" | "pending" | "succeeded" | "failed";
 
@@ -279,6 +280,8 @@ interface CandidateState {
   lastFetchTime: string | null;
   selectedJobId: string | number | null;
   message: string | null;
+  matchReport: Record<string | number, unknown>;   // ← ADD
+  matchReportLoading: boolean;                     // ← ADD
 }
 
 const initialState: CandidateState = {
@@ -290,6 +293,8 @@ const initialState: CandidateState = {
   lastFetchTime: null,
   selectedJobId: null,
   message: null,
+  matchReport: {},
+  matchReportLoading: false,
 };
 
 const candidateSlice = createSlice({
@@ -331,6 +336,20 @@ const candidateSlice = createSlice({
       // Reminder success
       .addCase(sendAssessmentReminder.fulfilled, (s, a) => {
         s.message = a.payload.message;
+      })
+      // Add to extraReducers builder:
+      .addCase(getMatchReport.pending, (s) => {
+        s.matchReportLoading = true;
+      })
+      .addCase(getMatchReport.fulfilled, (s, a) => {
+        s.matchReportLoading = false;
+        const report = a.payload as { candidate_id?: string | number };
+        if (report?.candidate_id) {
+          s.matchReport[report.candidate_id] = report;
+        }
+      })
+      .addCase(getMatchReport.rejected, (s) => {
+        s.matchReportLoading = false;
       });
   },
 });

@@ -169,3 +169,11 @@ export async function sendReminder(candidateId: string | number) {
   });
   return data;
 }
+
+/** GET /api/candidates/<id>/match-report */
+export async function fetchMatchReport(candidateId: string | number) {
+  const { data } = await axiosInstance.get(
+    `api/candidates/${candidateId}/match-report`
+  );
+  return data;
+}

@@ -149,3 +149,16 @@ export const sendAssessmentReminder = createAsyncThunk<
     return rejectWithValue(error?.response?.data || "Failed to send reminder");
   }
 });
+
+/** Fetch JD match report for selected candidate */
+export const getMatchReport = createAsyncThunk<
+  unknown,
+  string | number
+>("candidate/getMatchReport", async (candidateId, { rejectWithValue }) => {
+  try {
+    return await candidateAPI.fetchMatchReport(candidateId);
+  } catch (err: unknown) {
+    const error = err as { response?: { data?: unknown } };
+    return rejectWithValue(error?.response?.data || "Failed to fetch match report");
+  }
+});
