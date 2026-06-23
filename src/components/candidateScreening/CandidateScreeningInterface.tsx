@@ -1880,7 +1880,7 @@ export default function CandidateScreeningInterface() {
 
             {/* AFTER — opens localhost:3000/admin */}
             <a
-              href="http://localhost:3000/admin"
+              href="https://hrmgcvclone-production.up.railway.app"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-add"
