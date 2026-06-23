@@ -15,7 +15,7 @@
 // });
 import axios from "axios";
 
-export const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "https://lead-shades-wheels-surprising.trycloudflare.com"
+export const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "https://hrautomationbackend-production.up.railway.app"
 
 export const api = axios.create({
   baseURL: BACKEND_URL,
