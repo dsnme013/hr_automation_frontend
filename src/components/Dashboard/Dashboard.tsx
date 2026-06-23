@@ -8331,7 +8331,7 @@ const Dashboard: React.FC = () => {
             <TbBtn onClick={() => {}} theme={theme}><Download size={13} color={T.tx2} />Export Report</TbBtn>
             <TbBtn onClick={() => {}} theme={theme}><Settings size={13} color={T.tx2} />Settings</TbBtn>
             <button
-              onClick={() => window.open("https://13.233.81.136.nip.io", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open("https://3.109.201.45.nip.io", "_blank", "noopener,noreferrer")}
               style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: "inherit", fontSize: "0.73rem", fontWeight: 700, background: T.acc, color: T.btnText, padding: "0.4rem 1rem", borderRadius: 8, border: "none", cursor: "pointer", boxShadow: `0 0 16px ${T.accg}`, transition: "all 0.2s", whiteSpace: "nowrap" }}
               onMouseEnter={e => { const el = e.currentTarget as HTMLButtonElement; el.style.opacity = "0.85"; el.style.transform = "translateY(-1px)"; }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLButtonElement; el.style.opacity = "1"; el.style.transform = "translateY(0)"; }}
