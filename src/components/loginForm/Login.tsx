@@ -1093,7 +1093,7 @@ export default function Login({
         }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/ChatGPT Image Apr 15, 2026, 12_31_04 AM.png"
+            src="/office-bg.png"
             alt="Team collaboration"
             style={{
               position:"absolute", inset:0,
