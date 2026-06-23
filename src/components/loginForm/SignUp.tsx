@@ -590,7 +590,7 @@ export default function SignUp({
           position:"relative", overflow:"hidden", minHeight:"100vh",
         }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/ChatGPT Image Apr 15, 2026, 12_31_04 AM.png" alt="Team collaboration"
+          <img src="/office-bg.png" alt="Team collaboration"
             style={{
               position:"absolute", inset:0, width:"100%", height:"100%",
               objectFit:"cover", objectPosition:"center 25%", display:"block",
